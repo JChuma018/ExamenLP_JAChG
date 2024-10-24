@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado de Pacientes</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Listado de Pacientes</h1>
+        <a href="/formularioHistorial" class="btn btn-primary btn-lg mx-2">AGREGAR</a>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID Historial</th>
+                    <th>ID Paciente</th>
+                    <th>Fecha Historial</th>
+                    <th>Diagnostico</th>
+                    <th>Alergias</th>
+                    <th>Tratamientos</th>
+                    <th>Medico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="historial : ${ltsHistorial}">
+                    <td th:text="${historial.idHistorial}"></td>
+                    <td th:text="${historial.idPaciente}"></td>
+                    <td th:text="${historial.fechaHistorial}"></td>
+                    <td th:text="${historial.diagnostico}"></td>
+                    <td th:text="${historial.alergias}"></td>
+                    <td th:text="${historial.tratamiento}"></td>
+                    <td th:text="${historial.medicoAtendio}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

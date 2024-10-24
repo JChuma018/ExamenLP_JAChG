@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado de Pacientes</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+    
+        <h1 class="mb-4">Listado de Pacientes</h1>
+        <a href="localhost:8080/formularioPaciente" class="btn btn-primary btn-lg mx-2">AGREGAR</a>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Correo Electronico</th>
+                    <th>Fecha de Registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="paciente : ${ltsPaciente}">
+                    <td th:text="${paciente.idPaciente}"></td>
+                    <td th:text="${paciente.nombre}"></td>
+                    <td th:text="${paciente.apellido}"></td>
+                    <td th:text="${paciente.direccion}"></td>
+                    <td th:text="${paciente.telefono}"></td>
+                    <td th:text="${paciente.correo}"></td>
+                    <td th:text="${paciente.fechaRegistro}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
